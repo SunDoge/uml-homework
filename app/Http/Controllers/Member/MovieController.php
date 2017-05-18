@@ -16,6 +16,13 @@ class MovieController extends Controller
     }
 
     public function show($id) {
-        //
+        if ($movie = Movie::find($id)) {
+            $sessions = $movie->sessions()->get();
+
+
+            return view('member.movie.show', compact('movie', 'sessions'));
+        }
+
+        return '404 not found';
     }
 }

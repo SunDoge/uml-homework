@@ -19,6 +19,7 @@ class CreateTicketsTable extends Migration
             $table->integer('session_id')->unsigned()->index();
             $table->string('seats'); // Most mariadb haven't support json yet. Use string instead and decode when using.
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
