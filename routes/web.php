@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::resource('/movie', 'Member\MovieController');
+
+Route::resource('/movie/{movie_id}/ticket', 'Member\TicketController');
