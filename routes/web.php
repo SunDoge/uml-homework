@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/movie', 'Cinema\MovieController');
+Route::group(['middleware' => 'fake.auth'], function() {
 
-Route::resource('/movie/{movie_id}/ticket', 'Cinema\TicketController');
+    Route::resource('/movie', 'Cinema\MovieController');
+
+    Route::resource('/movie/{movie_id}/ticket', 'Cinema\TicketController');
+});
+
+

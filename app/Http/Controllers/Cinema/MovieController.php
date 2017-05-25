@@ -8,14 +8,17 @@ use App\Http\Controllers\Controller;
 
 class MovieController extends Controller
 {
-    public function index() {
-        if ($movies = Movie::all()) {
-            return view('cinema.movie.index', compact('movies'));
-        }
-        return '404 not found';
+    public function index()
+    {
+//        if ($movies = Movie::all()) {
+//            return view('cinema.movie.index', compact('movies'));
+//        }
+//        return '404 not found';
+        return view('cinema.movie.index');
     }
 
-    public function show($id) {
+    public function show($id)
+    {
         if ($movie = Movie::find($id)) {
             $sessions = $movie->sessions()->get();
 
@@ -26,7 +29,14 @@ class MovieController extends Controller
         return '404 not found';
     }
 
-    public function search($name) {
+    public function store(Request $request)
+    {
+        if ($query = $request->input('query')) {
+            $movies = Movie::where('name', 'like', '%'. $query . '%')->get();
+        } else {
+            $movies = Movie::all();
+        }
 
+        return response()->json(compact('movies'));
     }
 }

@@ -10,13 +10,13 @@ class Ticket extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'member_id',
+//        'member_id',
         'session_id',
         'seats',
     ];
 
     protected $casts = [
-        'seats' => 'array',
+        'seat' => 'array',
     ];
 
     public function member() {

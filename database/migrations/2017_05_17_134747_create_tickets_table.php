@@ -15,7 +15,7 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('member_id')->unsigned()->index();
+//            $table->integer('member_id')->unsigned()->index();
             $table->integer('session_id')->unsigned()->index();
             $table->string('seat'); // Most mariadb haven't support json yet. Use string instead and decode when using.
             $table->timestamps();
