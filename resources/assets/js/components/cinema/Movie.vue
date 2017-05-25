@@ -1,5 +1,11 @@
 <template>
     <div class="card">
-        Laravel
+        {{ movie.first }}
     </div>
 </template>
+
+<script>
+    export default {
+        props: ['movie']
+    }
+</script>

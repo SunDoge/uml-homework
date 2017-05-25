@@ -23,12 +23,18 @@
 
 </head>
 <body>
-    @include('cinema.layouts.header')
+<script src="{{ mix('js/app.js') }}"></script>
 
     <div id="app">
+
+        @include('cinema.layouts.header')
+
         @yield('content')
+
     </div>
 
-    <script src="{{ mix('js/app.js') }}"></script>
+
+
+
 </body>
 </html>

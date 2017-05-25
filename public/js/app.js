@@ -788,9 +788,9 @@ window.Vue = __webpack_require__(36);
 // Vue.component('example', require('./components/Example.vue'));
 Vue.component('movie', __webpack_require__(33));
 
-var app = new Vue({
-  el: '#app'
-});
+// const app = new Vue({
+//     el: '#app'
+// });
 
 /***/ }),
 /* 9 */
@@ -31628,7 +31628,7 @@ process.umask = function() { return 0; };
 
 var Component = __webpack_require__(34)(
   /* script */
-  null,
+  __webpack_require__(47),
   /* template */
   __webpack_require__(35),
   /* scopeId */
@@ -31720,7 +31720,7 @@ module.exports = function normalizeComponent (
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "card"
-  }, [_vm._v("\n    Laravel\n")])
+  }, [_vm._v("\n    " + _vm._s(_vm.movie.first) + "\n")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -41463,6 +41463,31 @@ module.exports = function(module) {
 __webpack_require__(8);
 module.exports = __webpack_require__(9);
 
+
+/***/ }),
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['movie']
+});
 
 /***/ })
 /******/ ]);
