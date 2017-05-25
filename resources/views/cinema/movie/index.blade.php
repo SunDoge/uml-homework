@@ -32,6 +32,16 @@
                 movies: [
                     {'first': 'test'}
                 ]
+            },
+            created() {
+                axios.post(
+                    '/movie',
+                    {
+                        query:''
+                    }
+                ).then(function (response) {
+                    console.log(response.data)
+                })
             }
         });
     </script>
