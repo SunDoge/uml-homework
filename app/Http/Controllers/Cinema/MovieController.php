@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Member;
+namespace App\Http\Controllers\Cinema;
 
 use App\Movie;
 use Illuminate\Http\Request;
@@ -10,7 +10,7 @@ class MovieController extends Controller
 {
     public function index() {
         if ($movies = Movie::all()) {
-            return view('member.movie.index', compact('movies'));
+            return view('cinema.movie.index', compact('movies'));
         }
         return '404 not found';
     }
