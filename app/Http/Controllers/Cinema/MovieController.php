@@ -25,4 +25,8 @@ class MovieController extends Controller
 
         return '404 not found';
     }
+
+    public function search($name) {
+
+    }
 }
