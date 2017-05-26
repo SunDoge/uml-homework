@@ -19,7 +19,7 @@
 
     <ul id="movie-list">
         <li>
-            <movie v-for="movie of movies"
+            <movie v-for="movie in movies"
                    v-bind:movie="movie"
             ></movie>
         </li>
@@ -28,11 +28,10 @@
     <script>
         new Vue ({
             el: '#movie-list',
-            data: {
-                movies: [
-                    {'name': 'test'},
-                    {'name': 'test'}
-                ]
+            data() {
+                return {
+                    movies: []
+                }
             },
             created() {
                 axios.post(
@@ -40,13 +39,7 @@
                     {
                         query:''
                     }
-                ).then(function (response) {
-                    this.data = response.data;
-                    console.log(this.data.movies)
-//                    for(movie of this.data.movies) {
-//                        console.log(movie.name)
-//                    }
-                })
+                ).then(response => this.movies = response.data)
             }
         });
     </script>
