@@ -71,17 +71,17 @@ class UmlHomeworkSeeder extends Seeder
 
         factory(App\Session::class, 50)->create();
 
-        $sessions = \App\Session::all();
-
-        foreach ($sessions as $session) {
-            $ticket = new \App\Ticket();
-            for ($r = 1; $r <= 5; $r++) {
-                for ($c = 1; $c <= 8; $c++) {
-                    $ticket->session_id = $session->id;
-                    $ticket->seat = ['r' => $r, 'c' => $c];
-                    $ticket->save();
-                }
-            }
-        }
+//        $sessions = \App\Session::all();
+//
+//        foreach ($sessions as $session) {
+//            $ticket = new \App\Ticket();
+//            for ($r = 1; $r <= 5; $r++) {
+//                for ($c = 1; $c <= 8; $c++) {
+//                    $ticket->session_id = $session->id;
+//                    $ticket->seat = ['r' => $r, 'c' => $c];
+//                    $ticket->save();
+//                }
+//            }
+//        }
     }
 }

@@ -10,7 +10,11 @@ class Member extends Model
         // TODO
     ];
 
-    public function tickets() {
-        return $this->hasMany('App\Ticket');
+//    public function tickets() {
+//        return $this->hasMany('App\Ticket');
+//    }
+
+    public function payments() {
+        return $this->hasMany('App\Member');
     }
 }

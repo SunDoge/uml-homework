@@ -12,18 +12,25 @@ class Ticket extends Model
     protected $fillable = [
 //        'member_id',
         'session_id',
-        'seats',
+        'payment_id',
+        'seat',
     ];
 
     protected $casts = [
         'seat' => 'array',
     ];
 
-    public function member() {
-        return $this->belongsTo('App\Member');
+//    public function member() {
+//        return $this->belongsTo('App\Member');
+//    }
+
+    public function session()
+    {
+        return $this->belongsTo('App\Session');
     }
 
-    public function session() {
-        return $this->belongsTo('App\Session');
+    public function payment()
+    {
+        return $this->belongsTo('App\Payment');
     }
 }

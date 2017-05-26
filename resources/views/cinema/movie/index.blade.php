@@ -19,7 +19,7 @@
 
     <ul id="movie-list">
         <li>
-            <movie v-for="movie in movies"
+            <movie v-for="movie of movies"
                    v-bind:movie="movie"
             ></movie>
         </li>
@@ -30,7 +30,8 @@
             el: '#movie-list',
             data: {
                 movies: [
-                    {'first': 'test'}
+                    {'name': 'test'},
+                    {'name': 'test'}
                 ]
             },
             created() {
@@ -40,7 +41,11 @@
                         query:''
                     }
                 ).then(function (response) {
-                    console.log(response.data)
+                    this.data = response.data;
+                    console.log(this.data.movies)
+//                    for(movie of this.data.movies) {
+//                        console.log(movie.name)
+//                    }
                 })
             }
         });
