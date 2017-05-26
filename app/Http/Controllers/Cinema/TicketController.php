@@ -40,7 +40,7 @@ class TicketController extends Controller
                     $ticket->save();
                 }
 
-                return response()->json();
+                return response()->json(['payment' => $payment]);
             }
 
             return response()->json();
