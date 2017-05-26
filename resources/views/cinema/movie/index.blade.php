@@ -18,26 +18,28 @@
     {{--</lu>--}}
 
     <ul id="movie-list">
-        <li>
+        <li v-for="movie in movies">
             <movie v-for="movie in movies"
-                   v-bind:movie="movie"
+            v-bind:movie="movie"
             ></movie>
         </li>
     </ul>
 
     <script>
-        new Vue ({
+        new Vue({
             el: '#movie-list',
-            data() {
-                return {
+            data: {
+
+
                     movies: []
-                }
+
+
             },
             created() {
                 axios.post(
                     '/movie',
                     {
-                        query:''
+                        query: ''
                     }
                 ).then(response => this.movies = response.data)
             }

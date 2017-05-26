@@ -37,6 +37,7 @@ class MovieController extends Controller
             $movies = Movie::all();
         }
 
-        return response()->json(compact('movies'));
+        return response()->json($movies);
+//        return $movies;
     }
 }
