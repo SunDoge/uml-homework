@@ -16,32 +16,41 @@
     {{--<movie></movie>--}}
     {{--@endforeach--}}
     {{--</lu>--}}
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <ul>
+                    <li>
+                        <movie v-for="movie in movies"
+                               v-bind:movie="movie"
+                        ></movie>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    <ul id="movie-list">
-        <li>
-            <movie v-for="movie in movies"
-                   v-bind:movie="movie"
-            ></movie>
-        </li>
-    </ul>
 
+
+
+
+@endsection
+
+@section('js')
     <script>
-        new Vue ({
-            el: '#movie-list',
-            data() {
-                return {
-                    movies: []
-                }
+        new Vue({
+            el: '#app',
+            data: {
+                movies: []
             },
             created() {
                 axios.post(
                     '/movie',
                     {
-                        query:''
+                        query: ''
                     }
                 ).then(response => this.movies = response.data)
             }
         });
     </script>
-
 @endsection
