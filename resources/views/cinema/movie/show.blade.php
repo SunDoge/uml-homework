@@ -36,10 +36,17 @@
 @extends('cinema.layouts.app')
 
 @section('content')
-    <movie></movie>
+    <movie v-bind:movie="movie"></movie>
+
+
+
+@endsection
+
+@section('js')
 
     <script>
         new Vue({
+            el: "#app",
             data: {
                 movie: {!! $movie->toJson() !!}
             }

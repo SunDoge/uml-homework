@@ -10,7 +10,7 @@ class SessionController extends Controller
 {
     public function index($movie_id) {
         if($sessions = Session::where('movie_id', $movie_id)->get()) {
-            return response()->json(compact('sessions'));
+            return response()->json($sessions);
         }
         return response()->json();
     }

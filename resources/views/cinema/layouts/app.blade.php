@@ -13,7 +13,7 @@
     <link href="https://cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Styles -->
-    <!--<link href="{{ mix('css/app.css') }}" rel="stylesheet">-->
+<!--<link href="{{ mix('css/app.css') }}" rel="stylesheet">-->
 
     <script>
         window.Laravel = {!! json_encode([
@@ -23,17 +23,23 @@
 
 </head>
 <body>
-<script src="{{ mix('js/app.js') }}"></script>
-
-    <div id="app">
-
-        @include('cinema.layouts.header')
-
-        @yield('content')
-
-    </div>
 
 
+<div id="app">
+
+    @include('cinema.layouts.header')
+
+    <section class="section">
+        <div class="container">
+            @yield('content')
+        </div>
+    </section>
+
+
+    <script src="{{ mix('js/app.js') }}"></script>
+    @yield('js')
+
+</div>
 
 
 </body>
