@@ -19,7 +19,10 @@ Route::group(['middleware' => 'fake.auth'], function() {
 
     Route::resource('/movie', 'Cinema\MovieController');
 
-    Route::resource('/movie/{movie_id}/ticket', 'Cinema\TicketController');
+    Route::resource('/movie.session', 'Cinema\SessionController');
+
+    Route::resource('/movie.session.ticket', 'Cinema\TicketController');
+
 });
 
 
