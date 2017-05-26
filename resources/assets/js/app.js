@@ -17,6 +17,8 @@ window.Vue = require('vue');
 
 // Vue.component('example', require('./components/Example.vue'));
 Vue.component('movie', require('./components/cinema/Movie.vue'));
+Vue.component('seats', require('./components/cinema/Seats.vue'));
+Vue.component('session', require('./components/cinema/Session.vue'));
 
 // const app = new Vue({
 //     el: '#app'

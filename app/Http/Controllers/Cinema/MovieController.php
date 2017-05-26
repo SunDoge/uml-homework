@@ -21,7 +21,7 @@ class MovieController extends Controller
     {
         if ($movie = Movie::find($id)) {
 
-            $sessions = $movie->sessions()->get();
+            $sessions = $movie->sessions()->latest('datetime')->get();
 
             return view('cinema.movie.show', compact('movie', 'sessions'));
         }

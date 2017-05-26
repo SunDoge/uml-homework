@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class SessionController extends Controller
 {
     public function index($movie_id) {
-        if($sessions = Session::where('movie_id', $movie_id)->get()) {
+        if($sessions = Session::where('movie_id', $movie_id)->latest('datetime')->get()) {
             return response()->json($sessions);
         }
         return response()->json();
