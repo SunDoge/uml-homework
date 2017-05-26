@@ -38,6 +38,22 @@
 @section('content')
     <movie v-bind:movie="movie"></movie>
 
+    <hr>
+
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <ul>
+                    <li>
+                        <session v-for="session in sessions"
+                                 v-bind:session="session"
+                        ></session>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 
 
 @endsection
@@ -45,10 +61,21 @@
 @section('js')
 
     <script>
+        var sessions = {!! $sessions->toJson() !!};
+        var sessions = sessions.map(function (item) {
+            var datetime = item.datetime.split(" ");
+            item.date = datetime[0];
+            item.time = datetime[1];
+            return item
+        });
+
+        console.log(sessions);
+
         new Vue({
             el: "#app",
             data: {
-                movie: {!! $movie->toJson() !!}
+                movie: {!! $movie->toJson() !!},
+                sessions: {!! $sessions->toJson() !!},
             }
         })
     </script>
