@@ -1,10 +1,15 @@
 <template>
     <article class="message">
         <div class="message-header">
-            <p>{{ session.datetime }}</p>
+            <p>{{ session.date }}</p>
         </div>
-        {{ session.datetime }}
-        {{ session.room }}
+        <div class="message-content">
+            <p> {{ session.time }}</p>
+            <p>{{ session.room }}</p>
+            <!--<button class="btn-primary is-right"></button>-->
+        </div>
+
+
     </article>
 </template>
 

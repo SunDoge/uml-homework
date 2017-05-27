@@ -14,16 +14,16 @@ class TicketController extends Controller
     public function index($movie_id, $session_id)
     {
         if($tickets = Ticket::where('session_id', $session_id)->get()) {
-            return response()->json(compact('tickets'));
+            return response()->json($tickets);
         }
         return response()->json();
     }
 
-    public function store(Request $request, $session_id)
+    public function store(Request $request, $movie_id, $session_id)
     {
         if ($seats = $request->input('seats')) {
 
-            $movie = Session::find($session_id)->movie();
+            $movie = Movie::find($movie_id);
 
             $amount = count($seats) * $movie->price;
 

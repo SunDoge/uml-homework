@@ -69,13 +69,13 @@
             return item
         });
 
-        console.log(sessions);
+//        console.log(sessions);
 
         new Vue({
             el: "#app",
             data: {
                 movie: {!! $movie->toJson() !!},
-                sessions: {!! $sessions->toJson() !!},
+                sessions: sessions,
             }
         })
     </script>

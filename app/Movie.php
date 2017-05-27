@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Movie extends Model
 {
     protected $fillable = [
-        // TODO
+        'name',
+        'director',
+        'stars',
+        'price',
+        'runtime',
+        'genres',
+        'summary',
+        'post',
     ];
 
     public function sessions() {
