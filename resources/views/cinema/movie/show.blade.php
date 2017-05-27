@@ -54,7 +54,7 @@
         </div>
     </div>
 
-
+    <seats></seats>
 
 @endsection
 
