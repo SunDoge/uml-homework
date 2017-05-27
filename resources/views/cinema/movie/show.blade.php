@@ -61,21 +61,20 @@
 @section('js')
 
     <script>
-        var sessions = {!! $sessions->toJson() !!};
-        var sessions = sessions.map(function (item) {
-            var datetime = item.datetime.split(" ");
-            item.date = datetime[0];
-            item.time = datetime[1];
-            return item
-        });
+        {{--var sessions = {!! $sessions->toJson() !!};--}}
+        {{--var sessions = sessions.map(function (item) {--}}
+            {{--var datetime = item.datetime.split(" ");--}}
+            {{--item.date = datetime[0];--}}
+            {{--item.time = datetime[1];--}}
+            {{--return item--}}
+        {{--});--}}
 
 //        console.log(sessions);
-
         new Vue({
             el: "#app",
             data: {
                 movie: {!! $movie->toJson() !!},
-                sessions: sessions,
+                sessions: {!! $sessions->toJson() !!},
             }
         })
     </script>

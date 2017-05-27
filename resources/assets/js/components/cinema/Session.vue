@@ -3,10 +3,16 @@
         <div class="message-header">
             <p>{{ session.date }}</p>
         </div>
-        <div class="message-content">
-            <p> {{ session.time }}</p>
+        <div class="message-body">
+            <p>{{ session.time }}</p>
             <p>{{ session.room }}</p>
-            <!--<button class="btn-primary is-right"></button>-->
+
+            <a class="button is-success">
+                <span class="icon is-small">
+                  <i class="fa fa-check"></i>
+                </span>
+                <span>Save</span>
+            </a>
         </div>
 
 
@@ -14,6 +20,7 @@
 </template>
 
 <script>
+    var current_url = document.URL;
     export default {
         props: ['session'],
     }
