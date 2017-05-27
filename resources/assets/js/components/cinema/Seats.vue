@@ -7,26 +7,15 @@
                 <button class="delete"></button>
             </header>
             <section class="modal-card-body">
-                <ul>
-                    <li>s</li>
-                    <li>s</li>
-                    <li>s</li>
-                    <li>s</li>
-                    <li>s</li>
-                    <li>s</li>
-                    <li>s</li>
-                    <li>s</li>
-                </ul>
-                <ul>
-                    <li>s</li>
-                    <li>s</li>
-                    <li>s</li>
-                    <li>s</li>
-                    <li>s</li>
-                    <li>s</li>
-                    <li>s</li>
-                    <li>s</li>
-                </ul>
+                <div class="container">
+                    <ul v-for="r in 5">
+                        <li v-for="c in 8">
+                            <span class="icon">
+                                <i class="fa fa-home"></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
             </section>
             <footer class="modal-card-foot">
                 <a class="button is-success">Save changes</a>
@@ -37,7 +26,20 @@
 </template>
 
 <script>
-    export default {
-
-    }
+    export default {}
 </script>
+
+<style type="text/css">
+    ul {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    li {
+        flex-shrink: 1;
+        flex-grow: 1;
+    }
+</style>
