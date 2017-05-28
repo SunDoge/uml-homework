@@ -1,10 +1,10 @@
 <template>
-    <div class="modal" :class="isActive">
+    <div class="modal is-active">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">Seats</p>
-                <button class="delete" @click="deactivateSeatsModal"></button>
+                <button class="delete" @click="$emit('close')"></button>
             </header>
             <section class="modal-card-body">
                 <div class="container seatContainer">
@@ -22,8 +22,8 @@
                 </div>
             </section>
             <footer class="modal-card-foot">
-                <a class="button is-success">Save changes</a>
-                <a class="button">Cancel</a>
+                <a class="button is-success" @click="saveSeats">Save changes</a>
+                <a class="button" @click="$emit('close')">Cancel</a>
             </footer>
         </div>
     </div>
@@ -31,6 +31,7 @@
 
 <script>
     export default {
+        props: ['seats', 'session'],
         data() {
             return {
                 isActive: 'is-active'
@@ -38,8 +39,11 @@
 
         },
         methods: {
-            deactivateSeatsModal: function () {
-                this.isActive = '';
+            saveSeats: function () {
+                console.log('post the seats to back-end')
+                axios.post(
+                    '/movie/'
+                )
             }
         }
     }

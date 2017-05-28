@@ -1664,6 +1664,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['seats', 'session'],
     data: function data() {
         return {
             isActive: 'is-active'
@@ -1671,8 +1672,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        deactivateSeatsModal: function deactivateSeatsModal() {
-            this.isActive = '';
+        saveSeats: function saveSeats() {
+            console.log('post the seats to back-end');
+            axios.post('/movie/');
         }
     }
 });
@@ -1708,7 +1710,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 var current_url = document.URL;
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['session']
+    props: ['session'],
+    methods: {
+        showSeats: function showSeats() {}
+    }
 });
 
 /***/ }),
@@ -31775,15 +31780,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "message-header"
   }, [_c('p', [_vm._v(_vm._s(_vm.session.date))])]), _vm._v(" "), _c('div', {
     staticClass: "message-body"
-  }, [_c('p', [_vm._v(_vm._s(_vm.session.time))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.session.room))]), _vm._v(" "), _vm._m(0)])])
+  }, [_c('p', [_vm._v(_vm._s(_vm.session.time))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.session.room))]), _vm._v(" "), _c('button', {
+    staticClass: "button is-success",
+    on: {
+      "click": function($event) {
+        _vm.$emit('close')
+      }
+    }
+  }, [_vm._m(0), _vm._v(" "), _c('span', [_vm._v("选择")])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('a', {
-    staticClass: "button is-success"
-  }, [_c('span', {
+  return _c('span', {
     staticClass: "icon is-small"
   }, [_c('i', {
     staticClass: "fa fa-check"
-  })]), _vm._v(" "), _c('span', [_vm._v("选择")])])
+  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -31818,8 +31828,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "modal",
-    class: _vm.isActive
+    staticClass: "modal is-active"
   }, [_c('div', {
     staticClass: "modal-background"
   }), _vm._v(" "), _c('div', {
@@ -31831,7 +31840,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Seats")]), _vm._v(" "), _c('button', {
     staticClass: "delete",
     on: {
-      "click": _vm.deactivateSeatsModal
+      "click": function($event) {
+        _vm.$emit('close')
+      }
     }
   })]), _vm._v(" "), _c('section', {
     staticClass: "modal-card-body"
@@ -31845,7 +31856,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "seatCol"
       }, [_vm._m(0, true)])
     }))
-  }))]), _vm._v(" "), _vm._m(1)])])
+  }))]), _vm._v(" "), _c('footer', {
+    staticClass: "modal-card-foot"
+  }, [_c('a', {
+    staticClass: "button is-success",
+    on: {
+      "click": _vm.saveSeats
+    }
+  }, [_vm._v("Save changes")]), _vm._v(" "), _c('a', {
+    staticClass: "button",
+    on: {
+      "click": function($event) {
+        _vm.$emit('close')
+      }
+    }
+  }, [_vm._v("Cancel")])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "button"
@@ -31854,14 +31879,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('i', {
     staticClass: "fa fa-user-o"
   })])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('footer', {
-    staticClass: "modal-card-foot"
-  }, [_c('a', {
-    staticClass: "button is-success"
-  }, [_vm._v("Save changes")]), _vm._v(" "), _c('a', {
-    staticClass: "button"
-  }, [_vm._v("Cancel")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

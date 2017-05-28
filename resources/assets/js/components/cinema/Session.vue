@@ -7,12 +7,12 @@
             <p>{{ session.time }}</p>
             <p>{{ session.room }}</p>
 
-            <a class="button is-success">
+            <button class="button is-success" @click="$emit('close')">
                 <span class="icon is-small">
                   <i class="fa fa-check"></i>
                 </span>
                 <span>选择</span>
-            </a>
+            </button>
         </div>
 
 
@@ -23,5 +23,10 @@
     var current_url = document.URL;
     export default {
         props: ['session'],
+        methods: {
+            showSeats : function () {
+
+            }
+        }
     }
 </script>
