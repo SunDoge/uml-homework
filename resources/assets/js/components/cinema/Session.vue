@@ -21,12 +21,13 @@
 </template>
 
 <script>
-    var current_url = document.URL;
+    var session_url;
     export default {
         props: ['session'],
         methods: {
             showSeats : function () {
-                eventHub.$emit('open','123');
+                eventHub.$emit('open', this.session.id);
+                session_url = document.URL + '/session/'
             }
         }
     }

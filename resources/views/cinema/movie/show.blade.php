@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <seats v-if="showModal"></seats>
+    <seats></seats>
 
 @endsection
 
@@ -76,7 +76,7 @@
             data: {
                 movie: {!! $movie->toJson() !!},
                 sessions: {!! $sessions->toJson() !!},
-                showModal: true
+//                showModal: false
             },
             methods: {
                 

@@ -10,6 +10,10 @@ class Member extends Model
         // TODO
     ];
 
+    protected $visible = [
+        'id', 'nickname', 'sex'
+    ];
+
 //    public function tickets() {
 //        return $this->hasMany('App\Ticket');
 //    }

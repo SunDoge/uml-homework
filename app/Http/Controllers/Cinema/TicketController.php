@@ -13,7 +13,7 @@ class TicketController extends Controller
 {
     public function index($movie_id, $session_id)
     {
-        if($tickets = Ticket::where('session_id', $session_id)->get()) {
+        if($tickets = Ticket::where('session_id', $session_id)->with('payment')->get()) {
             return response()->json($tickets);
         }
         return response()->json();
@@ -40,7 +40,7 @@ class TicketController extends Controller
                     $ticket->save();
                 }
 
-                return response()->json(['payment' => $payment]);
+                return response()->json($payment->load('tickets.session.movie'));
             }
 
             return response()->json();
