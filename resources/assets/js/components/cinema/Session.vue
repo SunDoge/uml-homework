@@ -7,7 +7,7 @@
             <p>{{ session.time }}</p>
             <p>{{ session.room }}</p>
 
-            <button class="button is-success" @click="$emit('close')">
+            <button class="button is-success" @click="showSeats">
                 <span class="icon is-small">
                   <i class="fa fa-check"></i>
                 </span>
@@ -25,7 +25,7 @@
         props: ['session'],
         methods: {
             showSeats : function () {
-
+                eventHub.$emit('open','123');
             }
         }
     }

@@ -1,10 +1,10 @@
 <template>
-    <div class="modal is-active">
+    <div class="modal" v-bind:class="[isActive]">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">Seats</p>
-                <button class="delete" @click="$emit('close')"></button>
+                <button class="delete" @click="closeSeat"></button>
             </header>
             <section class="modal-card-body">
                 <div class="container seatContainer">
@@ -23,7 +23,7 @@
             </section>
             <footer class="modal-card-foot">
                 <a class="button is-success" @click="saveSeats">Save changes</a>
-                <a class="button" @click="$emit('close')">Cancel</a>
+                <a class="button" @click="closeSeat">Cancel</a>
             </footer>
         </div>
     </div>
@@ -38,12 +38,27 @@
             }
 
         },
+        created: function(){
+            console.log(eventHub);
+            eventHub.$on('open',this.openSeat);
+        },
+        destroyed: function(){
+            eventHub.$off('open',this.openSeat);
+        },
         methods: {
             saveSeats: function () {
                 console.log('post the seats to back-end')
                 axios.post(
                     '/movie/'
                 )
+            },
+            openSeat: function(text){
+                this.isActive = 'is-active';
+                console.log(text);
+            },
+            closeSeat: function(){
+                eventHub.$emit('close','456');
+                this.isActive = '';
             }
         }
     }

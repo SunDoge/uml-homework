@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <seats v-if="showModal" @close="showModal = !showModal"></seats>
+    <seats v-if="showModal"></seats>
 
 @endsection
 
@@ -70,6 +70,7 @@
         {{--});--}}
 
 //        console.log(sessions);
+        var eventHub = new Vue();
         new Vue({
             el: "#app",
             data: {
@@ -78,7 +79,7 @@
                 showModal: true
             },
             methods: {
-
+                
             }
         })
     </script>
