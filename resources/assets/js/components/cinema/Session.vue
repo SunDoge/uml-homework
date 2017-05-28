@@ -11,7 +11,7 @@
                 <span class="icon is-small">
                   <i class="fa fa-check"></i>
                 </span>
-                <span>Save</span>
+                <span>选择</span>
             </a>
         </div>
 

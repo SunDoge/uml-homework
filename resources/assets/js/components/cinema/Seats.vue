@@ -1,18 +1,22 @@
 <template>
-    <div class="modal is-active">
+    <div class="modal" :class="isActive">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">Seats</p>
-                <button class="delete"></button>
+                <button class="delete" @click="deactivateSeatsModal"></button>
             </header>
             <section class="modal-card-body">
                 <div class="container seatContainer">
                     <ul v-for="r in 5" class="seatRaw">
                         <li v-for="c in 8" class="seatCol">
-                            <span class="icon">
-                                <i class="fa fa-home"></i>
-                            </span>
+
+                            <div class="button">
+                                <span class="icon">
+                                    <i class="fa fa-user-o"></i>
+                                </span>
+                            </div>
+
                         </li>
                     </ul>
                 </div>
@@ -26,7 +30,19 @@
 </template>
 
 <script>
-    export default {}
+    export default {
+        data() {
+            return {
+                isActive: 'is-active'
+            }
+
+        },
+        methods: {
+            deactivateSeatsModal: function () {
+                this.isActive = '';
+            }
+        }
+    }
 </script>
 
 <style type="text/css">
@@ -38,9 +54,11 @@
         align-items: center;
         width: 100%;
     }
-    .seatContainer{
+
+    .seatContainer {
         flex-direction: column;
     }
+
     .seatCol {
         flex-shrink: 1;
         flex-grow: 1;

@@ -75,6 +75,9 @@
             data: {
                 movie: {!! $movie->toJson() !!},
                 sessions: {!! $sessions->toJson() !!},
+            },
+            methods: {
+
             }
         })
     </script>
