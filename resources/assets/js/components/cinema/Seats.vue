@@ -7,9 +7,9 @@
                 <button class="delete"></button>
             </header>
             <section class="modal-card-body">
-                <div class="container">
-                    <ul v-for="r in 5">
-                        <li v-for="c in 8">
+                <div class="container seatContainer">
+                    <ul v-for="r in 5" class="seatRaw">
+                        <li v-for="c in 8" class="seatCol">
                             <span class="icon">
                                 <i class="fa fa-home"></i>
                             </span>
@@ -30,16 +30,20 @@
 </script>
 
 <style type="text/css">
-    ul {
+    .seatContainer, .seatRaw {
         display: flex;
         justify-content: flex-start;
         flex-wrap: nowrap;
         flex-direction: row;
         align-items: center;
+        width: 100%;
     }
-
-    li {
+    .seatContainer{
+        flex-direction: column;
+    }
+    .seatCol {
         flex-shrink: 1;
         flex-grow: 1;
+        text-align: center;
     }
 </style>
