@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <seats v-if="showModal" @close="showModal = !showModal"></seats>
+    <seats v-if="showModal" @close="showModal = !showModal" @open="showModal = !showModal"></seats>
 
 @endsection
 

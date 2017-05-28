@@ -31784,7 +31784,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "button is-success",
     on: {
       "click": function($event) {
-        _vm.$emit('close')
+        _vm.$emit('open')
       }
     }
   }, [_vm._m(0), _vm._v(" "), _c('span', [_vm._v("选择")])])])])

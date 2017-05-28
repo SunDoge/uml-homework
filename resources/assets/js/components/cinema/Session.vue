@@ -7,7 +7,7 @@
             <p>{{ session.time }}</p>
             <p>{{ session.room }}</p>
 
-            <button class="button is-success" @click="$emit('close')">
+            <button class="button is-success" @click="$emit('open')">
                 <span class="icon is-small">
                   <i class="fa fa-check"></i>
                 </span>
