@@ -1610,6 +1610,7 @@ module.exports = {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eventHub_js__ = __webpack_require__("./resources/assets/js/eventHub.js");
 //
 //
 //
@@ -1619,6 +1620,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['movie']
@@ -1627,57 +1629,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ }),
 
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/cinema/Seats.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['seats', 'session'],
-    data: function data() {
-        return {
-            isActive: 'is-active'
-        };
-    },
-
-    methods: {
-        saveSeats: function saveSeats() {
-            console.log('post the seats to back-end');
-            axios.post('/movie/');
-        }
-    }
-});
+throw new Error("Module build failed: SyntaxError: D:/cinema/resources/assets/js/components/cinema/Seats.vue: Unexpected token, expected , (42:16)\n\n\u001b[0m \u001b[90m 40 | \u001b[39m    }\u001b[33m,\u001b[39m\n \u001b[90m 41 | \u001b[39m    created\u001b[33m:\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 42 | \u001b[39m        eventHub\u001b[33m.\u001b[39m$on(\u001b[32m'open'\u001b[39m\u001b[33m,\u001b[39m\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mopenSeat)\u001b[33m;\u001b[39m\n \u001b[90m    | \u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 43 | \u001b[39m    }\u001b[33m,\u001b[39m\n \u001b[90m 44 | \u001b[39m    destroyed\u001b[33m:\u001b[39m {\n \u001b[90m 45 | \u001b[39m        eventHub\u001b[33m.\u001b[39m$off(\u001b[32m'open'\u001b[39m\u001b[33m,\u001b[39m\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mopenSeat)\u001b[33m;\u001b[39m\u001b[0m\n");
 
 /***/ }),
 
@@ -4102,7 +4056,7 @@ if (typeof jQuery === 'undefined') {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-bac2de66\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/cinema/Seats.vue":
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-738d62f5\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/cinema/Seats.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")();
@@ -31770,7 +31724,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-50efa2d6\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Session.vue":
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-280b16bd\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Session.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -31784,7 +31738,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "button is-success",
     on: {
       "click": function($event) {
-        _vm.$emit('open')
+        _vm.eventHub.$emit('open')
       }
     }
   }, [_vm._m(0), _vm._v(" "), _c('span', [_vm._v("选择")])])])])
@@ -31799,13 +31753,13 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-50efa2d6", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-280b16bd", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-7b27fbef\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Movie.vue":
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-4c16ce17\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Movie.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -31817,13 +31771,13 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7b27fbef", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-4c16ce17", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-bac2de66\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Seats.vue":
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-738d62f5\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Seats.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -31884,29 +31838,29 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-bac2de66", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-738d62f5", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-bac2de66\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/cinema/Seats.vue":
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-738d62f5\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/cinema/Seats.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-bac2de66\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/cinema/Seats.vue");
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-738d62f5\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/cinema/Seats.vue");
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("0e46936c", content, false);
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("39119a26", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-bac2de66\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Seats.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-bac2de66\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Seats.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-738d62f5\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Seats.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-738d62f5\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Seats.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -42026,13 +41980,13 @@ var Component = __webpack_require__("./node_modules/vue-loader/lib/component-nor
   /* script */
   __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/cinema/Movie.vue"),
   /* template */
-  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-7b27fbef\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Movie.vue"),
+  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-4c16ce17\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Movie.vue"),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/sundoge/Sites/uml-homework/resources/assets/js/components/cinema/Movie.vue"
+Component.options.__file = "D:\\cinema\\resources\\assets\\js\\components\\cinema\\Movie.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Movie.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42043,9 +41997,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7b27fbef", Component.options)
+    hotAPI.createRecord("data-v-4c16ce17", Component.options)
   } else {
-    hotAPI.reload("data-v-7b27fbef", Component.options)
+    hotAPI.reload("data-v-4c16ce17", Component.options)
   }
 })()}
 
@@ -42059,19 +42013,19 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-bac2de66\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/cinema/Seats.vue")
+__webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-738d62f5\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/cinema/Seats.vue")
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
   __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/cinema/Seats.vue"),
   /* template */
-  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-bac2de66\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Seats.vue"),
+  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-738d62f5\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Seats.vue"),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/sundoge/Sites/uml-homework/resources/assets/js/components/cinema/Seats.vue"
+Component.options.__file = "D:\\cinema\\resources\\assets\\js\\components\\cinema\\Seats.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Seats.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42082,9 +42036,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-bac2de66", Component.options)
+    hotAPI.createRecord("data-v-738d62f5", Component.options)
   } else {
-    hotAPI.reload("data-v-bac2de66", Component.options)
+    hotAPI.reload("data-v-738d62f5", Component.options)
   }
 })()}
 
@@ -42100,13 +42054,13 @@ var Component = __webpack_require__("./node_modules/vue-loader/lib/component-nor
   /* script */
   __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/cinema/Session.vue"),
   /* template */
-  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-50efa2d6\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Session.vue"),
+  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-280b16bd\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Session.vue"),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/sundoge/Sites/uml-homework/resources/assets/js/components/cinema/Session.vue"
+Component.options.__file = "D:\\cinema\\resources\\assets\\js\\components\\cinema\\Session.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Session.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42117,14 +42071,22 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-50efa2d6", Component.options)
+    hotAPI.createRecord("data-v-280b16bd", Component.options)
   } else {
-    hotAPI.reload("data-v-50efa2d6", Component.options)
+    hotAPI.reload("data-v-280b16bd", Component.options)
   }
 })()}
 
 module.exports = Component.exports
 
+
+/***/ }),
+
+/***/ "./resources/assets/js/eventHub.js":
+/***/ (function(module, __webpack_exports__) {
+
+"use strict";
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\cinema\\resources\\assets\\js\\eventHub.js'\n    at Error (native)");
 
 /***/ }),
 
