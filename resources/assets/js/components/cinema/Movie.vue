@@ -1,9 +1,9 @@
 <template>
     <div class="box">
-        <p>name: {{ movie.name }}</p>
-        <p>director: {{ movie.director }}</p>
-        <p>price: {{ movie.price }}元 runtime: {{ movie.runtime }}分钟</p>
-        <p>summary: {{ movie.summary }}</p>
+        <p>Name: {{ movie.name }}</p>
+        <p>Director: {{ movie.director }}</p>
+        <p>Price: {{ movie.price }}元 Runtime: {{ movie.runtime }}分钟</p>
+        <p>Summary: {{ movie.summary }}</p>
     </div>
 </template>
 

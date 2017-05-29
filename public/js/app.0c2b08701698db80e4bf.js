@@ -1626,6 +1626,66 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/cinema/Search.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            query: {
+                where: 'name',
+                value: ''
+            }
+        };
+    },
+
+    methods: {
+        search: function search() {
+            //                axios.post(
+            //                    '/movie',
+            //                    {
+            //                        query: {
+            //                            where: 'name',
+            //                            value: 'X'
+            //                        }
+            //                    }
+            //                ).then(response => {
+            //                    console.log(response.data);
+            //                })
+            eventHub.$emit('search', this.query);
+        }
+    }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/cinema/Seats.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -31846,6 +31906,49 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-2f2a26f9\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Search.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "field has-addons has-addons-centered"
+  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('p', {
+    staticClass: "control"
+  }, [_c('a', {
+    staticClass: "button is-info",
+    on: {
+      "click": function($event) {
+        _vm.search()
+      }
+    }
+  }, [_vm._v("\n            Search\n        ")])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    staticClass: "control"
+  }, [_c('span', {
+    staticClass: "select"
+  }, [_c('select', [_c('option', [_vm._v("Name")]), _vm._v(" "), _c('option', [_vm._v("Director")]), _vm._v(" "), _c('option', [_vm._v("Star")]), _vm._v(" "), _c('option', [_vm._v("Genre")]), _vm._v(" "), _c('option', [_vm._v("Summary")])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    staticClass: "control"
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "placeholder": "Find a movie"
+    }
+  })])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-2f2a26f9", module.exports)
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-50efa2d6\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Session.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31885,7 +31988,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "box"
-  }, [_c('p', [_vm._v("name: " + _vm._s(_vm.movie.name))]), _vm._v(" "), _c('p', [_vm._v("director: " + _vm._s(_vm.movie.director))]), _vm._v(" "), _c('p', [_vm._v("price: " + _vm._s(_vm.movie.price) + "元 runtime: " + _vm._s(_vm.movie.runtime) + "分钟")]), _vm._v(" "), _c('p', [_vm._v("summary: " + _vm._s(_vm.movie.summary))])])
+  }, [_c('p', [_vm._v("Name: " + _vm._s(_vm.movie.name))]), _vm._v(" "), _c('p', [_vm._v("Director: " + _vm._s(_vm.movie.director))]), _vm._v(" "), _c('p', [_vm._v("Price: " + _vm._s(_vm.movie.price) + "元 Runtime: " + _vm._s(_vm.movie.runtime) + "分钟")]), _vm._v(" "), _c('p', [_vm._v("Summary: " + _vm._s(_vm.movie.summary))])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -42045,8 +42148,10 @@ window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 Vue.component('movie', __webpack_require__("./resources/assets/js/components/cinema/Movie.vue"));
 Vue.component('seats', __webpack_require__("./resources/assets/js/components/cinema/Seats.vue"));
 Vue.component('session', __webpack_require__("./resources/assets/js/components/cinema/Session.vue"));
+Vue.component('search', __webpack_require__("./resources/assets/js/components/cinema/Search.vue"));
+
 // const app = new Vue({
-//     el: '#app'
+//     el: '#app',
 // });
 
 /***/ }),
@@ -42137,6 +42242,41 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-7b27fbef", Component.options)
   } else {
     hotAPI.reload("data-v-7b27fbef", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/cinema/Search.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
+  /* script */
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/cinema/Search.vue"),
+  /* template */
+  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-2f2a26f9\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/cinema/Search.vue"),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/home/sundoge/Sites/uml-homework/resources/assets/js/components/cinema/Search.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Search.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2f2a26f9", Component.options)
+  } else {
+    hotAPI.reload("data-v-2f2a26f9", Component.options)
   }
 })()}
 

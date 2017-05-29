@@ -32,7 +32,7 @@ class MovieController extends Controller
     public function store(Request $request)
     {
         if ($query = $request->input('query')) {
-            $movies = Movie::where('name', 'like', '%'. $query . '%')->get();
+            $movies = Movie::where($query['where'], 'like', '%'. $query['value'] . '%')->get();
         } else {
             $movies = Movie::all();
         }

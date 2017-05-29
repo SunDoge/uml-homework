@@ -1,7 +1,8 @@
 @extends('cinema.layouts.app')
 
 @section('content')
-
+    <search></search>
+    <hr>
     {{--<lu>--}}
     {{--@foreach($movies as $movie)--}}
     {{--<hr>--}}
@@ -39,18 +40,26 @@
 
 @section('js')
     <script>
+        var eventHub = new Vue();
         new Vue({
             el: '#app',
             data: {
-                movies: []
+                movies: [],
             },
             created() {
-                axios.post(
-                    '/movie',
-                    {
-                        query: ''
-                    }
-                ).then(response => this.movies = response.data)
+                this.search();
+                eventHub.$on('search', this.search);
+            },
+            methods: {
+                search(query = null) {
+                    console.log(query);
+                    axios.post(
+                        '/movie',
+                        {
+                            query: query
+                        }
+                    ).then(response => this.movies = response.data)
+                }
             }
         });
     </script>
