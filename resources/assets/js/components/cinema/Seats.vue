@@ -50,9 +50,9 @@
 //        props: ['seats', 'session'],
         data() {
             var seats = new Array();
-            for (let r in 5) {
+            for (let r=0; r<5; r++) {
                 var row = new Array();
-                for (let c in 8) {
+                for (let c=0; c<8; c++) {
                     row[c] = {member_id: 0};
                 }
                 seats[r] = row;
