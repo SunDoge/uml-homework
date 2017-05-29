@@ -47,20 +47,35 @@
 
 <script>
     export default {
-        props: ['seats', 'session'],
+//        props: ['seats', 'session'],
         data() {
+            var seats = new Array();
+            for (let r in 5) {
+                var row = new Array();
+                for (let c in 8) {
+                    row[c] = {member_id: 0};
+                }
+                seats[r] = row;
+            }
+
+            console.log(seats);
+
             return {
                 isActive: '',
                 success: false,
                 session_id: 0,
                 payment: {},
                 chosen:[],
-                choosing: []
+                choosing: [],
+                seats:seats
             }
 
         },
         created: function(){
 //            console.log(eventHub);
+
+
+
             eventHub.$on('open',this.openSeats);
         },
         destroyed: function(){
@@ -89,6 +104,7 @@
                 axios.get(window.location.href + '/session/' + session_id + '/ticket').then(response => {
                     this.chosen = response.data;
                     console.log(this.chosen);
+                    console.log(this.seats);
                     this.updateSeats();
                 })
             },

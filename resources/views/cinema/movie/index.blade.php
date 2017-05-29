@@ -23,6 +23,7 @@
                     <li>
                         <movie v-for="movie in movies"
                                v-bind:movie="movie"
+                               :key="movie.id"
                         ></movie>
                     </li>
                 </ul>

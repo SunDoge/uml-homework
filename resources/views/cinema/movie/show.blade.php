@@ -47,6 +47,7 @@
                     <li>
                         <session v-for="session in sessions"
                                  v-bind:session="session"
+                                 :key="session.id"
                         ></session>
                     </li>
                 </ul>
