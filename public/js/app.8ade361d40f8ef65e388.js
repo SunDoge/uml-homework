@@ -31912,7 +31912,31 @@ module.exports = function normalizeComponent (
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "field has-addons has-addons-centered"
-  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('p', {
+  }, [_vm._m(0), _vm._v(" "), _c('p', {
+    staticClass: "control"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.query.value),
+      expression: "query.value"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "placeholder": "Find a movie"
+    },
+    domProps: {
+      "value": (_vm.query.value)
+    },
+    on: {
+      "keyup": _vm.search,
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.query.value = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('p', {
     staticClass: "control"
   }, [_c('a', {
     staticClass: "button is-info",
@@ -31928,16 +31952,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('span', {
     staticClass: "select"
   }, [_c('select', [_c('option', [_vm._v("Name")]), _vm._v(" "), _c('option', [_vm._v("Director")]), _vm._v(" "), _c('option', [_vm._v("Star")]), _vm._v(" "), _c('option', [_vm._v("Genre")]), _vm._v(" "), _c('option', [_vm._v("Summary")])])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', {
-    staticClass: "control"
-  }, [_c('input', {
-    staticClass: "input",
-    attrs: {
-      "type": "text",
-      "placeholder": "Find a movie"
-    }
-  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {

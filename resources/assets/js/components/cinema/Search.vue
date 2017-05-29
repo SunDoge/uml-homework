@@ -12,7 +12,7 @@
                     </span>
         </p>
         <p class="control">
-            <input class="input" type="text" placeholder="Find a movie">
+            <input class="input" type="text" placeholder="Find a movie" v-model="query.value" @keyup="search">
         </p>
         <p class="control">
             <a class="button is-info" @click="search()">
