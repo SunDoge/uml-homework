@@ -15,7 +15,7 @@
                 </div>
                 <nav class="level is-mobile">
                 <div class="level-left">
-                    <a class="level-item">
+                    <a class="level-item" href="/movie">
                         <span class="icon is-small"><i class="fa fa-reply"></i></span>
                     </a>
                     <a class="level-item">

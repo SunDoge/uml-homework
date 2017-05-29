@@ -26,7 +26,7 @@
         props: ['session'],
         methods: {
             showSeats : function () {
-                eventHub.$emit('open', this.session.id);
+                eventHub.$emit('open', this.session);
                 session_url = document.URL + '/session/'
             }
         }

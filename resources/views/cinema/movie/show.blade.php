@@ -46,7 +46,7 @@
                 <ul>
                     <li>
                         <session v-for="session in sessions"
-                                 v-bind:session="session"
+                                 :session="session"
                                  :key="session.id"
                         ></session>
                     </li>
@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <seats></seats>
+    <seats :movie="movie"></seats>
 
 @endsection
 
@@ -72,6 +72,7 @@
 
 //        console.log(sessions);
         var eventHub = new Vue();
+        var member = {!! json_encode(session('user')) !!};
         new Vue({
             el: "#app",
             data: {

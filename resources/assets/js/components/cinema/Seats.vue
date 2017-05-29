@@ -8,10 +8,16 @@
             </header>
             <section class="modal-card-body">
                 <div class="content seatContainer" v-if="!success">
-                    <ul style="list-style-type: none" v-for="r in 5" class="seatRaw">
-                        <li v-for="c in 8" class="seatCol">
+                    <ul style="list-style-type: none" v-for="(row, r) in seats" class="seatRaw">
+                        <li v-for="(s, c) in row" class="seatCol">
 
-                            <div class="button" @click="">
+                            <div class="button" :class="[s.class]" v-if="s.disabled" disabled>
+                                <span class="icon">
+                                    <i class="fa fa-user-o"></i>
+                                </span>
+                            </div>
+
+                            <div class="button" @click="choose(r, c)" :class="[s.class]"  v-else>
                                 <span class="icon">
                                     <i class="fa fa-user-o"></i>
                                 </span>
@@ -25,7 +31,16 @@
                     <h1 class="title has-text-centered">订票成功</h1>
                     <hr>
                     <div class="box">
-                        订单信息
+                        <p>用户名：{{ member.nickname }}</p>
+                        <p>电影名：{{ movie.name }}</p>
+                        <p>场次信息：No.{{ session.id }} {{ session.datetime }}</p>
+                        <p>座位信息：</p>
+                        <ul>
+                            <li v-for="s in choosing">
+                                {{ s.r + 1 }}排{{ s.c + 1 }}座
+                            </li>
+                        </ul>
+                        <p>总价：{{ payment.amount }}</p>
                     </div>
                 </div>
             </section>
@@ -47,13 +62,18 @@
 
 <script>
     export default {
-//        props: ['seats', 'session'],
+        props: ['movie'],
         data() {
             var seats = new Array();
             for (let r=0; r<5; r++) {
                 var row = new Array();
                 for (let c=0; c<8; c++) {
-                    row[c] = {member_id: 0};
+                    row[c] = {
+//                        member_id: 0,
+                        class: '',
+                        status: 0, // 0: selectable | 1: you select it | -1: others select it
+                        disabled: false,
+                    };
                 }
                 seats[r] = row;
             }
@@ -63,11 +83,12 @@
             return {
                 isActive: '',
                 success: false,
-                session_id: 0,
+                session: {},
                 payment: {},
                 chosen:[],
                 choosing: [],
-                seats:seats
+                seats:seats,
+                member: member
             }
 
         },
@@ -85,23 +106,37 @@
             saveSeats: function () {
                 console.log('post the seats to back-end');
                 let url = window.location.href;
-                axios.post(
-                    url + '/session/' + this.session_id + '/ticket',
-                    {
-                        seats: [
+                let seats = [];
+                this.seats.forEach((row, r) => {
+                    row.forEach((i, c) => {
+                        if(i.class === 'is-success' && !i.disabled) {
+                            seats.push({
+                                r: r,
+                                c: c,
+                            })
+                        }
+                    })
+                });
+                console.log(seats);
 
-                        ]
+                axios.post(
+                    url + '/session/' + this.session.id + '/ticket',
+                    {
+                        seats: seats
                     }
                 ).then(response => {
                     this.payment = response.data;
+                    this.success = true;
+                    this.choosing = seats;
                     console.log(this.payment);
                 })
             },
-            openSeats: function(session_id){
+            openSeats: function(session){
                 this.isActive = 'is-active';
-                this.session_id = session_id;
-                console.log(this.session_id);
-                axios.get(window.location.href + '/session/' + session_id + '/ticket').then(response => {
+//                this.session_id = session_id;
+                this.session = session;
+                console.log(this.session.id);
+                axios.get(window.location.href + '/session/' + session.id + '/ticket').then(response => {
                     this.chosen = response.data;
                     console.log(this.chosen);
                     console.log(this.seats);
@@ -111,11 +146,20 @@
             closeSeats: function(){
                 eventHub.$emit('close','456');
                 this.isActive = '';
+                this.success = false;
             },
             updateSeats: function () {
-                for (let seat in this.chosen) {
-                    console.log(seat.payment);
+                for (let seat of this.chosen) {
+//                    console.log(seat);
+//                    let status = seat.payment.member_id == member.id ? 1: -1;
+//                    this.seats[seat.seat.r -1][seat.seat.c -1].status = seat.payment.member_id == member.id ? 1: -1;
+                    this.seats[seat.seat.r][seat.seat.c].class = seat.payment.member_id == member.id ? 'is-success': 'is-danger';
+                    this.seats[seat.seat.r][seat.seat.c].disabled = true;
                 }
+            },
+            choose: function (r, c) {
+                this.seats[r][c].class = this.seats[r][c].class === 'is-success' ? '' : 'is-success';
+                console.log('choose' + r + ',' + c);
             }
         }
     }

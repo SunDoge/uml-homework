@@ -40,7 +40,7 @@ class TicketController extends Controller
                     $ticket->save();
                 }
 
-                return response()->json($payment->load('tickets.session.movie'));
+                return response()->json($payment);
             }
 
             return response()->json();
