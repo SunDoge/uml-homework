@@ -10,10 +10,10 @@
                     </a>
                 </div>
                 <span class="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                </span>
                 <div class="nav-right nav-menu">
                     <a class="nav-item is-active">
                         Home
@@ -27,9 +27,9 @@
                     <span class="nav-item">
             <a class="button is-primary is-inverted">
               <span class="icon">
-                <i class="fa fa-github"></i>
+                <i class="fa fa-user"></i>
               </span>
-              <span>Download</span>
+              <span>Welcome, {{ session('user')['nickname'] }}!</span>
             </a>
           </span>
                 </div>
@@ -41,10 +41,10 @@
     <div class="hero-body">
         <div class="container has-text-centered">
             <h1 class="title">
-                Title
+                Cinema
             </h1>
             <h2 class="subtitle">
-                Subtitle
+                Demo
             </h2>
 
         </div>

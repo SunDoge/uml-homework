@@ -1,5 +1,5 @@
 <template>
-    <div class="box" @click="directToMovie">
+    <div class="box movie-box" @click="directToMovie">
         <article class="media">
             <div class="media-left">
                 <figure class="image is-128x128">
@@ -10,7 +10,9 @@
                 <div class="content">
                     <p>Name: {{ movie.name }}</p>
                     <p>Director: {{ movie.director }}</p>
-                    <p>Price: {{ movie.price }}元 Runtime: {{ movie.runtime }}分钟</p>
+                    <p>Stars: {{ movie.stars }}</p>
+                    <p>Genres: {{ movie.genres }}</p>
+                    <p>Price: {{ movie.price }}元 &nbsp;&nbsp; Runtime: {{ movie.runtime }}分钟</p>
                     <p>Summary: {{ movie.summary }}</p>
                 </div>
                 <nav class="level is-mobile">
@@ -43,3 +45,9 @@
         }
     }
 </script>
+
+<style type="text/css">
+    .movie-box:hover{
+        box-shadow: 0 3.5px 6px rgba(0, 0, 0, 0.24), 0 3.5px 8px rgba(0, 0, 0, 0.12);
+    }
+</style>
