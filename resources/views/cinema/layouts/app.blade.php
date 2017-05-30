@@ -15,6 +15,20 @@
     <!-- Styles -->
 <!--<link href="{{ mix('css/app.css') }}" rel="stylesheet">-->
 
+    <style type="text/css">
+        #back {
+            position: fixed;
+            right: 50px;
+            bottom: 25px;
+            -webkit-border-radius:25px;
+            -moz-border-radius:25px;
+            border-radius:25px;
+            width: 50px;
+            height:50px;
+            opacity: 0.7;
+        }
+    </style>
+
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),

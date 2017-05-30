@@ -36,6 +36,9 @@
 @extends('cinema.layouts.app')
 
 @section('content')
+
+
+
     <movie v-bind:movie="movie"></movie>
 
     <hr>
@@ -57,6 +60,8 @@
 
     <seats :movie="movie"></seats>
 
+
+    <a href="/movie" class="button is-primary" id="back">Back</a>
 
 
 @endsection
