@@ -57,6 +57,8 @@
 
     <seats :movie="movie"></seats>
 
+
+
 @endsection
 
 @section('js')

@@ -38,6 +38,9 @@
 
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
+
+@include('cinema.layouts.footer')
+
 @yield('js')
 
 </body>

@@ -4,9 +4,10 @@
         <header class="nav">
             <div class="container">
                 <div class="nav-left">
-                    <a class="nav-item">
+                    <a class="nav-item" href="/movie">
                         <!--<img src="images/bulma-type-white.png" alt="Logo">-->
-                        Cinema
+                        <strong>Cinema</strong>
+
                     </a>
                 </div>
                 <span class="nav-toggle">
