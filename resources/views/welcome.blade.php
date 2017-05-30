@@ -89,9 +89,16 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+
+                <progress class="progress is-primary" value="30" max="100">30%</progress>
+
             </div>
+
+
         </div>
 
-        
+        <script>
+
+        </script>
     </body>
 </html>

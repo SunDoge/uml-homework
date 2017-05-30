@@ -1,5 +1,5 @@
 <template>
-    <div class="modal" v-bind:class="[isActive]">
+    <div class="modal" :class="[isActive]">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
@@ -64,21 +64,21 @@
     export default {
         props: ['movie'],
         data() {
-            var seats = new Array();
+            let seats = new Array();
             for (let r=0; r<5; r++) {
                 var row = new Array();
                 for (let c=0; c<8; c++) {
                     row[c] = {
 //                        member_id: 0,
                         class: '',
-                        status: 0, // 0: selectable | 1: you select it | -1: others select it
+//                        status: 0, // 0: selectable | 1: you select it | -1: others select it
                         disabled: false,
                     };
                 }
                 seats[r] = row;
             }
-
-            console.log(seats);
+//
+//            console.log(seats);
 
             return {
                 isActive: '',
@@ -136,6 +136,14 @@
 //                this.session_id = session_id;
                 this.session = session;
                 console.log(this.session.id);
+
+                for (let r=0; r<5; r++) {
+                    for (let c=0; c<8; c++) {
+                        this.seats[r][c].class = '';
+                        this.seats[r][c].disabled = false;
+                    }
+                }
+
                 axios.get(window.location.href + '/session/' + session.id + '/ticket').then(response => {
                     this.chosen = response.data;
                     console.log(this.chosen);
@@ -149,6 +157,9 @@
                 this.success = false;
             },
             updateSeats: function () {
+
+                console.log(this.chosen);
+                console.log(this.seats);
                 for (let seat of this.chosen) {
 //                    console.log(seat);
 //                    let status = seat.payment.member_id == member.id ? 1: -1;
