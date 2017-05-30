@@ -13,7 +13,8 @@ var deployServer = http.createServer(function(request, response) {
         var commands = [
             'cd ' + PATH,
             'git reset --hard',
-            'git pull'
+            'git pull',
+            'npm run dev'
         ].join(' && ')
 
         exec(commands, function(err, out, code) {

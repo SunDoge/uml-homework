@@ -2,12 +2,13 @@
     <div class="field has-addons has-addons-centered">
         <p class="control">
                     <span class="select">
-                      <select>
-                        <option>Name</option>
-                        <option>Director</option>
-                        <option>Star</option>
-                        <option>Genre</option>
-                        <option>Summary</option>
+                      <select v-model="query.where">
+                        <!--<option>Name</option>-->
+                        <!--<option>Director</option>-->
+                        <!--<option>Star</option>-->
+                        <!--<option>Genre</option>-->
+                        <!--<option>Summary</option>-->
+                          <option v-for="(o, k) in options" :value="o">{{ k }}</option>
                       </select>
                     </span>
         </p>
@@ -26,6 +27,13 @@
     export default {
         data() {
             return {
+                options: {
+                    Name: 'name',
+                    Director: 'director',
+                    Star: 'stars',
+                    Genre: 'genres',
+                    Summary: 'summary'
+                },
                 query: {
                     where: 'name',
                     value: ''
@@ -44,8 +52,12 @@
 //                    }
 //                ).then(response => {
 //                    console.log(response.data);
-//                })
+//                }
                 eventHub.$emit('search', this.query);
+            },
+            selectOption: function(o) {
+                console.log(o);
+                this.query.where = o;
             }
         }
     }
