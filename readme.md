@@ -1,7 +1,7 @@
 # 运行说明书
 
 ## 运行环境
-最佳运行环境为`lnpm`，windows下可用`wamp`。鉴于运行环境难以保证，提供在线版本
+最佳运行环境为`lnmp`，windows下可用`wamp`。鉴于运行环境难以保证，提供在线版本
 
 > [http://cinema.gayhub.cn/movie](http://cinema.gayhub.cn/movie)
 
