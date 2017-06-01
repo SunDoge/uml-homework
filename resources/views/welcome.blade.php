@@ -108,16 +108,17 @@
         methods: {
             redirect() {
                 setTimeout(() => {
-                    let text = 'Redirecting to Cinema...';
-                    this.text = '';
+                    let text = 'Redirecting to Cinema... ';
+                    this.text = ' ';
 //                    text = text.split("");
                     let i = 0;
-                    setInterval(() => {
+                    var redirect = setInterval(() => {
                         if (i < text.length) {
                             this.text += text.charAt(i);
                             i++;
                         } else {
                             window.location.href = '/movie';
+                            clearInterval(redirect);
                         }
                     }, 100);
 
