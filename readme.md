@@ -33,7 +33,7 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 
-数据库类型为`mysql | pgsql | sqlite | sqlsrv`其中一种。
+数据库类型为`mysql | pgsql | sqlite | sqlsrv`其中一种。修改对应的port。
 
 设置好数据库名（需提前手动建好数据库）、用户名和密码。
 
